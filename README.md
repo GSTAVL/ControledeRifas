@@ -58,5 +58,5 @@ A primeira entrega apresenta o cadastro, consulta, pesquisa e edição dos mater
 
 ## Links
 
-- GitHub Project Board: adicionar link
+- GitHub Project Board: [adicionar link](https://github.com/users/GSTAVL/projects/2/views/1)
 - Vídeo da AC1: adicionar link
