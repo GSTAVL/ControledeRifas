@@ -1,10 +1,10 @@
-# Rifas da Jess
+# Controle de Rifas - Rifas da Jess
 
 Aplicativo desenvolvido para gerenciamento de materiais e acompanhamento de uma campanha de arrecadação por meio de rifas.
 
 ## Objetivo
 
-O objetivo do Rifas da Jess é centralizar o cadastro dos materiais necessários para uma campanha, registrar as rifas vendidas e acompanhar a evolução financeira da arrecadação.
+O objetivo do Controle de Rifas é centralizar o cadastro dos materiais necessários para uma campanha, registrar as rifas vendidas e acompanhar a evolução financeira da arrecadação.
 
 ## Tecnologias utilizadas
 
