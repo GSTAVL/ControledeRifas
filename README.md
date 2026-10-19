@@ -20,22 +20,37 @@ O projeto está organizado em três camadas:
 - Lógica de negócio: fórmulas Power Fx
 - Persistência de dados: listas do SharePoint
 
-## Entrega atual
+## Entregas
+### AC1: Gestão de materiais
 
-### AC1: Gerenciamento básico de materiais
+Status: concluída.
 
-A primeira entrega apresenta o cadastro, consulta, pesquisa e edição dos materiais.
+Funcionalidades:
 
-## Funcionalidades da AC1
+    cadastro de materiais;
+    listagem;
+    pesquisa;
+    edição;
+    integração com SharePoint.
 
-- Navegação entre as telas
-- Cadastro de materiais
-- Validação dos campos obrigatórios
-- Armazenamento dos registros no SharePoint
-- Listagem dos materiais em uma galeria
-- Pesquisa de materiais pelo nome
-- Edição de materiais existentes
-- Mensagens de sucesso e erro
+### AC2: Gestão de rifas
+
+Status: concluída.
+
+Funcionalidades:
+
+    cadastro de vendas de rifas;
+    listagem dos registros;
+    pesquisa por comprador;
+    edição;
+    método de pagamento;
+    integração com a lista de rifas no SharePoint.
+
+### AC3: Controle de compra dos materiais
+
+Status: planejada.
+Prova Final: Dashboard integrado
+Status: planejada.
 
 ## Estrutura do repositório
 
