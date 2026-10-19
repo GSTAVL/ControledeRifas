@@ -1,4 +1,4 @@
-# Modelo de dados
+<img width="4032" height="202" alt="image" src="https://github.com/user-attachments/assets/1ed52632-21b0-4c59-a664-26a6d11e809e" /># Modelo de dados
 
 ## Lista Materiais
 
@@ -44,3 +44,5 @@ A lista Rifas armanzena as rifas compradas na campanha
 | Método de pagamento | Escolha              | Sim         | PIX                     |
 | Valor               | Moeda                | Sim         | 25,00                   |
 | Anexos              | Anexos               | Não         | comprovante-exemplo.pdf |
+
+As listas Materiais e Rifas são fontes independentes nesta etapa. A integração financeira entre os dois módulos será implementada na Prova Final por meio dos cálculos de valor necessário e valor arrecadado.
