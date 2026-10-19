@@ -37,3 +37,10 @@ A lista Rifas armanzena as rifas compradas na campanha
 
 ## Campos Utilizados na AC2
 
+| Nome exibido        | Tipo SharePoint      | Obrigatório | Exemplo                 |
+|---------------------|----------------------|-------------|-------------------------|
+| Comprador           | Texto de linha única | Sim         | Cliente Demonstração    |
+| Quantidade          | Número               | Sim         | 5                       |
+| Método de pagamento | Escolha              | Sim         | PIX                     |
+| Valor               | Moeda                | Sim         | 25,00                   |
+| Anexos              | Anexos               | Não         | comprovante-exemplo.pdf |
