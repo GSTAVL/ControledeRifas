@@ -30,3 +30,10 @@ A lista Materiais armazena os itens necessários para a campanha.
 Embora Status e Condição já existam na estrutura da lista, a automação para marcar materiais como comprados será apresentada em uma entrega posterior.
 
 Na AC1, o status inicial utilizado é Não Comprado.
+
+## Lista Rifas
+
+A lista Rifas armanzena as rifas compradas na campanha
+
+## Campos Utilizados na AC2
+
