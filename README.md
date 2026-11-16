@@ -73,11 +73,9 @@ Funcionalidades:
 
 - ativação do carrinho na galeria de materiais;
 - seleção do material que será comprado;
-- confirmação antes da alteração do status;
 - atualização do campo `Status` para `Comprado` no SharePoint;
 - indicação visual dos materiais comprados;
-- contador dinâmico no formato `2 de 7 materiais comprados`;
-- atualização da galeria após a compra;
+- contador dinâmico no formato `x de y materiais comprados`;
 - preservação das funcionalidades das AC1 e AC2.
 
 Documentação: [`AC3.md`](./AC3.md).
