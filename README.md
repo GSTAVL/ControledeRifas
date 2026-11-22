@@ -1,140 +1,170 @@
-# Controle de Rifas - Rifas da Jess
+# RifasJess
 
-Aplicativo desenvolvido para gerenciar os materiais necessários para uma campanha, registrar rifas e controlar a compra dos materiais por meio da Microsoft Power Platform.
+Aplicativo desenvolvido em Microsoft Power Apps para gerenciar materiais, registrar vendas de rifas, acompanhar compras e controlar financeiramente uma campanha de arrecadação.
 
 ## Objetivo
 
-O **Controle de Rifas** centraliza:
+O RifasJess foi criado para centralizar o acompanhamento de uma campanha baseada na venda de rifas.
 
-- o cadastro e a edição dos materiais necessários para a campanha;
-- o registro e a consulta das rifas adquiridas;
-- o acompanhamento do status de compra dos materiais;
-- a contagem de materiais comprados e pendentes.
+O sistema permite:
 
-A integração financeira completa entre os valores das rifas e dos materiais será realizada na Prova Final.
+- cadastrar os materiais necessários;
+- registrar as vendas de rifas;
+- pesquisar e editar registros;
+- controlar quais materiais já foram comprados;
+- acompanhar o valor necessário;
+- acompanhar o valor arrecadado;
+- calcular o valor restante ou excedente;
+- visualizar o progresso das compras.
 
 ## Tecnologias utilizadas
 
 - Microsoft Power Apps Canvas;
 - Power Fx;
 - Microsoft SharePoint Lists;
-- GitHub para versionamento e documentação.
+- Microsoft 365;
+- GitHub;
+- GitHub Projects.
 
 ## Arquitetura
 
-O projeto está organizado em três camadas:
+O projeto utiliza uma arquitetura de três camadas:
 
-- **Apresentação:** Microsoft Power Apps Canvas;
+- **Front-end:** Microsoft Power Apps Canvas;
 - **Lógica de negócio:** fórmulas Power Fx;
 - **Persistência de dados:** listas do Microsoft SharePoint.
 
-Mais detalhes estão disponíveis em [`docs/ARQUITETURA.md`](./docs/ARQUITETURA.md).
+## Fontes de dados
 
-## Entregas
+O aplicativo utiliza duas listas do SharePoint:
+
+### MateriaisLista
+
+Armazena os materiais necessários para a campanha.
+
+Principais campos:
+
+- Material;
+- Quantidade;
+- Valor;
+- Status;
+- Condição.
+
+### RifasLista
+
+Armazena as vendas de rifas.
+
+Principais campos:
+
+- Nome do comprador;
+- Quantidade de rifas;
+- Método de pagamento;
+- Valor;
+- Anexos.
+
+## Entregas do projeto
 
 ### AC1: Gestão de materiais
 
-**Status:** concluída.
+Status: concluída.
 
 Funcionalidades:
 
+- tela inicial;
+- navegação;
 - cadastro de materiais;
-- consulta em galeria;
-- pesquisa pelo nome do material;
-- edição de registros;
+- consulta dos materiais;
+- pesquisa pelo nome;
+- edição;
 - validação dos campos;
-- integração com a lista `MateriaisLista` no SharePoint;
-- definição inicial do status como `Não Comprado`.
-
-Documentação: [`AC1.md`](./AC1.md).
+- integração com a lista de materiais do SharePoint.
 
 ### AC2: Gestão de rifas
 
-**Status:** concluída.
+Status: concluída.
 
 Funcionalidades:
 
-- cadastro de rifas;
-- registro do comprador;
-- registro da quantidade;
-- seleção do método de pagamento;
-- inclusão opcional de anexos;
-- pesquisa e consulta dos registros;
-- edição de rifas;
-- integração com a lista `RifasLista` no SharePoint.
-
-Documentação: [`AC2.md`](./AC2.md).
+- acesso ao módulo de rifas;
+- cadastro de vendas;
+- consulta dos registros;
+- pesquisa pelo comprador;
+- edição;
+- método de pagamento;
+- cálculo do valor da venda;
+- anexo opcional;
+- integração com a lista de rifas do SharePoint.
 
 ### AC3: Controle de compra dos materiais
 
-**Status:** concluída.
+Status: concluída.
 
 Funcionalidades:
 
-- ativação do carrinho na galeria de materiais;
-- seleção do material que será comprado;
-- atualização do campo `Status` para `Comprado` no SharePoint;
-- indicação visual dos materiais comprados;
-- contador dinâmico no formato `x de y materiais comprados`;
-- preservação das funcionalidades das AC1 e AC2.
-
-Documentação: [`AC3.md`](./AC3.md).
+- utilização do ícone de carrinho;
+- confirmação da compra;
+- atualização do status do material;
+- identificação visual de material comprado;
+- contador de materiais comprados;
+- persistência da mudança de status no SharePoint.
 
 ### Prova Final: Dashboard integrado
 
-**Status:** planejada.
+Status: concluída.
 
-Escopo previsto:
+Funcionalidades:
 
-- valor necessário para a compra dos materiais;
-- valor arrecadado com as rifas;
-- saldo restante;
-- indicadores financeiros integrados.
+- cálculo do valor necessário;
+- cálculo do valor arrecadado;
+- cálculo do valor restante ou excedente;
+- quantidade de materiais comprados;
+- quantidade de materiais pendentes;
+
+## Regras financeiras
+
+### Valor necessário
+
+Corresponde à soma dos valores cadastrados na lista de materiais.
+
+### Valor arrecadado
+
+Corresponde à soma dos valores registrados nas vendas de rifas.
+
+### Valor restante
+
+É calculado por:
+
+`Valor necessário - Valor arrecadado`
+
+Quando o valor arrecadado é maior que o necessário, o sistema apresenta o valor como excedente.
+
+### Progresso da arrecadação
+
+É calculado por:
+
+`Valor arrecadado / Valor necessário`
+
+### Progresso das compras
+
+É calculado pela quantidade de materiais com status `Comprado` em relação ao total de materiais cadastrados.
 
 ## Estrutura do repositório
 
-```text
-ControledeRifas/
-├── app/
-│   ├── RifasJess.msapp
-│   ├── RifasJess_AC2.msapp
-│   └── RifasJess_AC3.msapp
-├── docs/
-│   ├── ARQUITETURA.md
-│   ├── INTEGRANTES.md
-│   └── MODELO_DE_DADOS.md
-├── sharepoint/
-│   ├── LISTA_MATERIAIS.md
-│   ├── LISTA_RIFASLISTA.md
-│   └── README.md
-├── AC1.md
-├── AC2.md
-├── AC3.md
-└── README.md
-```
+- `app`: exportações do Canvas App;
+- `docs`: documentação técnica;
+- `sharepoint`: documentação das listas;
+- `entregas`: documentação de cada etapa;
+- `evidencias`: capturas das funcionalidades;
+- `CHANGELOG.md`: histórico de evolução do projeto.
 
 ## Como executar
 
-1. Criar as listas do SharePoint conforme a documentação da pasta [`sharepoint`](./sharepoint/).
-2. Baixar o arquivo `.msapp` correspondente à entrega na pasta [`app`](./app/).
-3. Importar o aplicativo no Microsoft Power Apps.
-4. Criar ou atualizar as conexões com as listas `MateriaisLista` e `RifasLista`.
-5. Conferir se formulários e galerias apontam para as fontes corretas.
-6. Salvar, publicar e testar o aplicativo.
-
-Para utilizar a versão mais recente, importar:
-
-```text
-app/RifasJess_AC3.msapp
-```
-
-## Modelo de dados
-
-- A lista **Materiais** armazena material, quantidade, valor, status e condição.
-- A lista **RifasLista** armazena comprador, quantidade, método de pagamento, valor e anexos.
-- Na AC3, o campo `Status` da lista **Materiais** controla os valores `Não Comprado` e `Comprado`.
-
-Consulte [`docs/MODELO_DE_DADOS.md`](./docs/MODELO_DE_DADOS.md).
+1. Criar as listas de SharePoint conforme a documentação da pasta `sharepoint`.
+2. Importar o arquivo `RifasJess_Final.msapp` no Power Apps.
+3. Atualizar as conexões com as listas SharePoint.
+4. Confirmar os nomes das fontes `MateriaisLista` e `RifasLista`.
+5. Salvar e publicar o aplicativo.
+6. Executar os testes de inclusão, edição, compra e atualização do dashboard.
 
 ## Integrante
 
@@ -142,5 +172,8 @@ Consulte [`docs/MODELO_DE_DADOS.md`](./docs/MODELO_DE_DADOS.md).
 
 ## Links
 
-- [GitHub Project Board](https://github.com/users/GSTAVL/projects/2/views/1)
-- [Vídeo da AC1](https://youtu.be/Fq4pXfdvAd0)
+- GitHub Project Board: ADICIONAR_LINK_DO_BOARD
+- Vídeo da AC1: ADICIONAR_LINK
+- Vídeo da AC2: ADICIONAR_LINK
+- Vídeo da AC3: ADICIONAR_LINK
+- Vídeo da Prova Final: ADICIONAR_LINK
